@@ -6,5 +6,5 @@ Enunciado: Crear una aplicacion de lista de tareas que permita agregar nuevas ta
 Generando reportes por estados y eliminarlas de la lista
 Planificacion: Las herramientas que se usaran seran html y javascript
 Diseño: La creacion de una lista facil y entendible donde tengamos la tarea, el horario y como es el estado de la tarea
-Ramas: Utilizaremos 2 ramas pedrojr y adrianjr.
+Ramas: Utilizaremos 3 ramas pedrojr , arijr y crisjr
 Funciones: Las funciones que utilizaremos seran: agregar, modificar, eliminar, reportes, manejar estados.
