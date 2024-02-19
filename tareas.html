@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Tareas</title>
+</head>
+<body>
+    <h1>Gestión de Tareas</h1>
+    <div id="listaTareas">
+        
+    </div>
+    <label for="codigoTarea">Código de Tarea:</label>
+    <select id="codigoTarea">
+        
+    </select>
+    <label for="nuevoEstado">Nuevo Estado:</label>
+    <select id="nuevoEstado">
+        <option value="Activa">Activa</option>
+        <option value="En Progreso">En Progreso</option>
+        <option value="Por Iniciar">Por Iniciar</option>
+    </select>
+    <button onclick="cambiarEstadoTarea()">Cambiar Estado</button>
+
+    <script src="DRIVERS/d_cambiodeestado.js"></script>
+</body>
+</html>
