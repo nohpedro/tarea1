@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gestión de Tareas</title>
+  </head>
+  <body>
+    <h1>Gestión de Tareas</h1>
+    <div id="listaTareas"></div>
+    <label for="codigoTarea">Código de Tarea:</label>
+    <select id="codigoTarea"></select>
+    <label for="nuevoEstado">Nuevo Estado:</label>
+    <select id="nuevoEstado">
+      <option value="Activa">Activa</option>
+      <option value="En Progreso">En Progreso</option>
+      <option value="Por Iniciar">Por Iniciar</option>
+    </select>
+    <button onclick="cambiarEstadoTarea()">Cambiar Estado</button>
+    <button id="descargarReporte">Descargar Reporte de Tareas</button>
+
+    <!-- Nuevos campos para agregar tarea -->
+    <h2>Agregar Nueva Tarea</h2>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre">
+    <label for="inicio">Inicio:</label>
+    <input type="text" id="inicio">
+    <label for="fin">Fin:</label>
+    <input type="text" id="fin">
+    <label for="estado">Estado:</label>
+    <select id="estado">
+      <option value="Activa">Activa</option>
+      <option value="En Progreso">En Progreso</option>
+      <option value="Por Iniciar">Por Iniciar</option>
+    </select>
+    <button onclick="agregarTarea()">Agregar Tarea</button>
+
+    <!-- Nuevo botón para eliminar tarea -->
+    <h2>Eliminar Tarea</h2>
+    <label for="eliminarCodigo">Código de Tarea a Eliminar:</label>
+    <input type="text" id="eliminarCodigo">
+    <button onclick="eliminarTarea()">Eliminar Tarea</button>
+    <script src="DRIVERS/d_cambiodeestado.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+  </body>
+</html>
