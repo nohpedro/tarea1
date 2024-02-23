@@ -5,7 +5,28 @@
     <title>Gestión de Tareas</title>
   </head>
   <body>
+
+    <label for="nombreTarea">Nombre de la Tarea:</label>
+<input type="text" id="nombreTarea">
+
+<label for="horaInicio">Hora de Inicio:</label>
+<input type="text" id="horaInicio">
+
+<label for="horaFin">Hora de Fin:</label>
+<input type="text" id="horaFin">
+
+
+<button onclick="crearNuevaTarea()">Crear Tarea</button>
+
+
     <h1>Gestión de Tareas</h1>
+
+
+
+
+
+
+    
     <div id="listaTareas"></div>
     <label for="codigoTarea">Código de Tarea:</label>
     <select id="codigoTarea"></select>
@@ -18,7 +39,34 @@
     <button onclick="cambiarEstadoTarea()">Cambiar Estado</button>
     <button id="descargarReporte">Descargar Reporte de Tareas</button>
 
+
+
+
+
+    
+
+
+    <label for="seleccionarTareas">Seleccionar Tarea:</label>
+    <select id="seleccionarTareas"></select>
+
+    <div id="edicionTarea">
+      <label for="editNombre">Nuevo Nombre:</label>
+      <input type="text" id="editNombre">
+
+      <label for="editHoraInicio">Nueva Hora de Inicio:</label>
+      <input type="text" id="editHoraInicio">
+
+      <label for="editHoraFin">Nueva Hora de Fin:</label>
+      <input type="text" id="editHoraFin">
+
+      <button onclick="editarTarea()">Editar Tarea</button>
+      <button onclick="guardarEdicion()">Actualizar</button>
+    </div>
+
     <script src="DRIVERS/d_cambiodeestado.js"></script>
+    <script src="DRIVERS/crearTarea.js"></script>
+    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
   </body>
 </html>
