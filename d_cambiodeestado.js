@@ -26,16 +26,11 @@ function agregarTarea() {
 }
 function eliminarTarea() {
   const codigo = parseInt(document.getElementById("eliminarCodigo").value);
-
-  // Buscar el índice de la tarea con el código proporcionado
   const indiceTarea = tareas.findIndex(tarea => tarea[0] === codigo);
-
-  // Verificar si se encontró la tarea
   if (indiceTarea !== -1) {
-    // Eliminar la tarea de la lista
     tareas.splice(indiceTarea, 1);
     console.log(`Tarea con código ${codigo} eliminada exitosamente.`);
-    mostrarTareas(); // Actualizar la visualización de las tareas
+    mostrarTareas(); 
   } else {
     console.log(`No se encontró ninguna tarea con el código ${codigo}.`);
   }
