@@ -1,5 +1,5 @@
 const toggleThemeBtn = document.getElementById('toggleTheme');
-const navbar = document.querySelector('.navbar'); // Asegúrate de que este selector coincida con tu navbar
+const navbar = document.querySelector('.navbar'); 
 
 toggleThemeBtn.addEventListener('click', function() {
   document.body.classList.toggle('dark-mode');

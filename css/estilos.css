@@ -5,9 +5,7 @@ body {
 .form-group {
   margin-bottom: 15px;
 }
-/* Resto de tu CSS */
 
-/* Estilos para el modo oscuro */
 .dark-mode {
   background-color: #343a40;
   color: #ffffff;
@@ -36,16 +34,15 @@ body {
 }
 
 .dark-mode .navbar-light.bg-light {
-  background-color: #343a40 !important; /* Cambiar al color de fondo oscuro */
+  background-color: #343a40 !important; 
   color: #ffffff !important;
 }
 
 .dark-mode .navbar-dark.bg-dark .navbar-nav .nav-link {
-  color: #ffffff !important; /* Asegurarse de que los enlaces sean visibles en modo oscuro */
-}
+  color: #ffffff !important;}
 
 .dark-mode .navbar-dark.bg-dark .navbar-brand {
-  color: #ffffff !important; /* Color del título o marca en modo oscuro */
+  color: #ffffff !important; 
 }
 
 
