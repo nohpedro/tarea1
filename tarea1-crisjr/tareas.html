@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gestión de Tareas</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Gestión de Tareas</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#crearTarea"  id="navCrearTarea">Crear Tarea </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#editarTarea" id="navEditarTarea">Editar Tarea</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#eliminarTarea" id="navEliminarTarea" >Eliminar Tarea</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#generarReporte" id="navGenerarReporte" >Generar Reporte</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#crearCategoria" id="navCrearCategoria">Crear Categoría</a>
+        </li>
+        
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1 class="text-center mb-4">Gestión de Tareas</h1>
+    <div class="container" style="align-items: left">
+      <div class="row justify-content-center">
+        <a href="index.html" class="btn btn-primary">Volver</a>
+        <button id="toggleTheme" class="btn btn-secondary">Cambiar Modo</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="crearTarea" class="container pagina"  style="display: none;">
+    <br>
+    <div id="listaTareas"></div>
+    <br>
+  </div>
+
+  <div id="editarTarea" class="container pagina" style="display: none; ">
+    <div class="col-md-6">
+        <div class="form-group">
+          <label for="nombreTarea">Nombre de la Tarea:</label>
+          <input type="text" id="nombreTarea" class="form-control" />
+        </div>
+
+        <div class="form-group">
+          <label for="horaInicio">Hora de Inicio:</label>
+          <input type="text" id="horaInicio" class="form-control" />
+        </div>
+
+        <div class="form-group">
+          <label for="horaFin">Hora de Fin:</label>
+          <input type="text" id="horaFin" class="form-control" />
+        </div>
+
+        <button onclick="crearNuevaTarea()" class="btn btn-primary">
+          Crear Tarea
+        </button>
+    </div>
+  </div>
+
+  <div id="eliminarTarea" class="container pagina" style="display: none;">
+    <div class="col-md-6">
+        <h3 class="text-center mb-4">Editar Tareas</h3>
+
+        <div class="form-group">
+          <label for="codigoTarea">Código de Tarea:</label>
+          <select id="codigoTarea" class="form-control"></select>
+        </div>
+
+        <div id="edicionTarea">
+          <div class="form-group">
+            <label for="editNombre">Nuevo Nombre:</label>
+            <input type="text" id="editNombre" class="form-control" />
+          </div>
+
+          <div class="form-group">
+            <label for="editHoraInicio">Nueva Hora de Inicio:</label>
+            <input type="text" id="editHoraInicio" class="form-control" />
+          </div>
+
+          <div class="form-group">
+            <label for="editHoraFin">Nueva Hora de Fin:</label>
+            <input type="text" id="editHoraFin" class="form-control" />
+          </div>
+
+          <div class="form-group">
+            <label for="editEstado">Nuevo Estado:</label>
+            <select id="editEstado" class="form-control">
+              <option value="Activa">Completada</option>
+              <option value="En Progreso">En Curso</option>
+              <option value="Por Iniciar">Nueva</option>
+            </select>
+          </div>
+
+          <button onclick="editarTarea()" class="btn btn-secondary">
+            Editar Tarea
+          </button>
+          <br />
+          <br />
+          <button onclick="guardarEdicion()" class="btn btn-secondary">
+            Guardar Edición
+          </button>
+          <br />
+          <br />
+          <button onclick="eliminarTarea()" class="btn btn-secondary">
+            Eliminar Tarea
+          </button>
+        </div>
+    </div>
+  </div>
+
+  <div id="crearCategoria" class="container pagina" style="display: none;">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="nombreCategoria">Nombre de la Categoría:</label>
+        <input type="text" id="nombreCategoria" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="descripcionCategoria">Descripción de la Categoría:</label>
+        <textarea id="descripcionCategoria" class="form-control"></textarea>
+      </div>
+
+      <button onclick="crearNuevaCategoria()" class="btn btn-primary">
+        Crear Categoría
+      </button>
+    </div>
+  </div>
+  
+  
+
+  <div id="generarReporte" class="container pagina" style="display: none;">
+    <br>
+    <button id="descargarReporte" class="btn btn-primary">
+        Descargar Reporte de Tareas
+      </button>
+  </div>
+
+  <script src="DRIVERS/app.js"></script>
+  <script src="DRIVERS/navbar.js"></script>
+  <script src="DRIVERS/modeo_ocuro.js"></script>
+  <script src="DRIVERS/crearTarea.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
