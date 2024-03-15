@@ -16,16 +16,16 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="#crearTarea"  id="navCrearTarea">Crear Tarea </a>
+          <a class="nav-link" href="#crearTarea"  id="navCrearTarea">Tareas </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#editarTarea" id="navEditarTarea">Editar Tarea</a>
+          <a class="nav-link" href="#editarTarea" id="navEditarTarea">Crear Tareas</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#eliminarTarea" id="navEliminarTarea" >Eliminar Tarea</a>
+          <a class="nav-link" href="#eliminarTarea" id="navEliminarTarea" >Modificar/Eliminar Tareas</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#generarReporte" id="navGenerarReporte" >Generar Reporte</a>
+          <a class="nav-link" href="#generarReporte" id="navGenerarReporte" >Generar Reportes</a>
         </li>
       </ul>
     </div>
@@ -50,6 +50,7 @@
     <br>
 
   </div>
+ 
   <div id="editarTarea" class="container pagina" style="display: none; ">
     <div class="col-md-6">
         <div class="form-group">
@@ -57,21 +58,23 @@
           <input type="text" id="nombreTarea" class="form-control" />
         </div>
 
+      
         <div class="form-group">
           <label for="horaInicio">Hora de Inicio:</label>
-          <input type="text" id="horaInicio" class="form-control" />
+          <input type="datetime-local" id="horaInicio" class="form-control" />
         </div>
 
+      
         <div class="form-group">
           <label for="horaFin">Hora de Fin:</label>
-          <input type="text" id="horaFin" class="form-control" />
+          <input type="datetime-local" id="horaFin" class="form-control" />
         </div>
 
         <button onclick="crearNuevaTarea()" class="btn btn-primary">
           Crear Tarea
         </button>
-        
-      </div>
+    </div>
+</div>
 
 
 
