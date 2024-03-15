@@ -5,20 +5,21 @@ let tareas = [
   [4, "Ejercicio", "12:20", "14:00", "Completada"],
 ];
 
-let tareaEditando = null;
-
-function editarTarea() {
+function cargarTareaParaEditar() {
   const selectCodigo = document.getElementById("codigoTarea");
   const codigo = selectCodigo.value;
-
-  // Buscar y seleccionar la tarea para edición
   tareaEditando = tareas.find((tarea) => tarea[0] == codigo);
 
-
-  document.getElementById("editNombre").value = tareaEditando[1];
-  document.getElementById("editHoraInicio").value = tareaEditando[2];
-  document.getElementById("editHoraFin").value = tareaEditando[3];
-  document.getElementById("editEstado").value = tareaEditando[4];
+  if (tareaEditando) {
+    document.getElementById("editNombre").value = tareaEditando[1];
+    document.getElementById("editHoraInicio").value = tareaEditando[2]
+      ? formatearFechaHora(tareaEditando[2])
+      : "";
+    document.getElementById("editHoraFin").value = tareaEditando[3]
+      ? formatearFechaHora(tareaEditando[3])
+      : "";
+    document.getElementById("editEstado").value = tareaEditando[4];
+  }
 }
 
 function eliminarTarea() {
@@ -40,20 +41,22 @@ function eliminarTarea() {
 }
 
 function guardarEdicion() {
-  if (tareaEditando) {
-    tareaEditando[1] = document.getElementById("editNombre").value;
-    tareaEditando[2] = document.getElementById("editHoraInicio").value;
-    tareaEditando[3] = document.getElementById("editHoraFin").value;
-    tareaEditando[4] = document.getElementById("editEstado").value;
+  tareaEditando[1] = document.getElementById("editNombre").value;
 
-    document.getElementById("editNombre").value = "";
-    document.getElementById("editHoraInicio").value = "";
-    document.getElementById("editHoraFin").value = "";
-    document.getElementById("editEstado").value = "";
+  const horaInicioStr = document.getElementById("editHoraInicio").value;
+  const horaFinStr = document.getElementById("editHoraFin").value;
 
-    tareaEditando = null;
-    mostrarTareas();
-  }
+  tareaEditando[2] = horaInicioStr ? new Date(horaInicioStr) : null;
+  tareaEditando[3] = horaFinStr ? new Date(horaFinStr) : null;
+  tareaEditando[4] = document.getElementById("editEstado").value;
+
+  document.getElementById("editNombre").value = "";
+  document.getElementById("editHoraInicio").value = "";
+  document.getElementById("editHoraFin").value = "";
+  document.getElementById("editEstado").selectedIndex = 0;
+
+  tareaEditando = null;
+  mostrarTareas();
 }
 
 function mostrarTareas() {
@@ -92,6 +95,11 @@ function descargarReporteTareas() {
 
   doc.save("reporte-tareas.pdf");
 }
+const inputs = document.querySelectorAll("input, select");
+inputs.forEach((input) => {
+  input.style.opacity = "0.99";
+  setTimeout(() => (input.style.opacity = ""), 0);
+});
 
 document
   .getElementById("descargarReporte")
