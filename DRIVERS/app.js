@@ -14,7 +14,7 @@ function editarTarea() {
   // Buscar y seleccionar la tarea para edición
   tareaEditando = tareas.find((tarea) => tarea[0] == codigo);
 
-  // Mostrar los valores actuales en los campos de edición
+
   document.getElementById("editNombre").value = tareaEditando[1];
   document.getElementById("editHoraInicio").value = tareaEditando[2];
   document.getElementById("editHoraFin").value = tareaEditando[3];
