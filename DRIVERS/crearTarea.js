@@ -15,4 +15,5 @@ function crearNuevaTarea() {
   document.getElementById("horaFin").value = "";
 
   mostrarTareas();
+  cambiarSeccion("crearTarea");
 }

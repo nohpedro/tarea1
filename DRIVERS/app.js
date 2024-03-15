@@ -161,6 +161,7 @@ function eliminarTarea() {
   } else {
     console.log(`No se encontró ninguna tarea con el código ${codigo}.`);
   }
+  cambiarSeccion("crearTarea");
 }
 
 function guardarEdicion() {
@@ -180,6 +181,7 @@ function guardarEdicion() {
 
   tareaEditando = null;
   mostrarTareas();
+  cambiarSeccion("crearTarea");
 }
 
 function mostrarTareas() {
