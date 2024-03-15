@@ -6,6 +6,83 @@ let tareas = [
   [4, "Tarea 4", "12:20", "14:00", "En Progreso"],
 ];
 
+let eliminadas = [
+  ["001", "Tarea 1", "10:00", "11:30", "Completada"],
+  ["002", "Tarea 2", "12:00", "13:30", "Plazo Vencido"],
+  ["003", "Tarea 3", "14:00", "15:30", "Plazo Vencido"],
+];
+
+let tareaSeleccionada = null;
+
+function generarHistorial() {
+  let tablaBody = document.getElementById("tablaBody");
+  tablaBody.innerHTML = ""; // Limpiar contenido previo de la tabla
+
+  eliminadas.forEach((tarea) => {
+    let fila = document.createElement("tr");
+
+    tarea.forEach((dato, i) => {
+      if (i != 0) {
+        let celda = document.createElement("td");
+        celda.textContent = dato;
+        fila.appendChild(celda);
+      }
+    });
+
+    fila.addEventListener("click", (e) => {
+      let selectedRows = tablaBody.querySelectorAll("tr.selected");
+      selectedRows.forEach((row) => {
+        row.classList.remove("selected");
+      });
+
+      fila.classList.add("selected");
+    });
+
+    fila.addEventListener("mouseover", (e) => {
+      if (!fila.classList.contains("selected")) {
+        fila.classList.add("hover");
+      }
+    });
+
+    fila.addEventListener("mouseout", (e) => {
+      if (!fila.classList.contains("selected")) {
+        fila.classList.remove("hover");
+      }
+    });
+
+    fila.setAttribute("cod", tarea[0]);
+
+    fila.addEventListener("click", (e) => {
+      let nombre = fila.cells[0].textContent;
+      let horaInicio = fila.cells[1].textContent;
+      let horaFinal = fila.cells[2].textContent;
+
+      tareaSeleccionada = [nombre, horaInicio, horaFinal];
+
+      console.log(tareaSeleccionada);
+    });
+
+    tablaBody.appendChild(fila);
+  });
+}
+
+function reestablecerTarea() {
+  if (tareaSeleccionada == null) {
+    alert("Seleccione una tarea");
+    return;
+  }
+
+  cambiarSeccion("editarTarea");
+  document.getElementById("nombreTarea").value = tareaSeleccionada[0];
+  document.getElementById("horaInicio").value = tareaSeleccionada[1];
+  document.getElementById("horaFin").value = tareaSeleccionada[2];
+
+  console.log(tareaSeleccionada);
+  //eliminadas.slice();
+  document.getElementById("editNombre").value = "editada";
+  tareaSeleccionada = null;
+}
+
 function cambiarEstadoTarea() {
   const selectCodigo = document.getElementById("codigoTarea");
   const codigo = selectCodigo.value;
