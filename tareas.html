@@ -27,6 +27,9 @@
         <li class="nav-item">
           <a class="nav-link" href="#generarReporte" id="navGenerarReporte" >Generar Reportes</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#historialEliminaciones" id="navHistorialEliminaciones" >Historial de Eliminaciones</a>
+        </li>
       </ul>
     </div>
   </nav>
@@ -50,7 +53,6 @@
     <br>
 
   </div>
- 
   <div id="editarTarea" class="container pagina" style="display: none; ">
     <div class="col-md-6">
         <div class="form-group">
@@ -147,7 +149,27 @@
   </div>
 
 
-      </div>
+
+  <div id="historialEliminaciones" class="container pagina" style="display: none; ">
+  <table id="tabla">
+      <thead>
+          <tr>
+              <th>Nombre de la tarea</th>
+              <th>Hora de Inicio</th>
+              <th>Hora de fin</th>
+              <th>Estado</th>
+          </tr>
+      </thead>
+      <tbody id="tablaBody">
+      </tbody>
+  </table>
+
+  <button onclick="reestablecerTarea()" class="btn btn-primary" style="margin-top: 20px;">Reprogramar Tarea</button>
+        
+  </div>
+
+
+
 
       <script src="DRIVERS/app.js"></script>
 
