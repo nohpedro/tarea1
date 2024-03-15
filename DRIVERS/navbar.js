@@ -10,6 +10,9 @@ function cambiarSeccion(seccionId) {
     document.getElementById('navEditarTarea').addEventListener('click', function() { cambiarSeccion('editarTarea'); });
     document.getElementById('navEliminarTarea').addEventListener('click', function() { cambiarSeccion('eliminarTarea'); });
     document.getElementById('navGenerarReporte').addEventListener('click', function() { cambiarSeccion('generarReporte'); });
-
+    document.getElementById('navHistorialEliminaciones').addEventListener('click', function(){ 
+      cambiarSeccion('historialEliminaciones');
+      generarHistorial();
+    })
     cambiarSeccion('crearTarea');
   });
