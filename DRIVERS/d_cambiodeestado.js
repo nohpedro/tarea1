@@ -65,7 +65,7 @@ function descargarReporteTareas() {
 document
   .getElementById("descargarReporte")
   .addEventListener("click", descargarReporteTareas);
-<<<<<<< HEAD
+
 //Por aquí Ariana Hizo un botón de descargar Tareas del historial de Eliminadas.
-=======
->>>>>>> 19018e5b7457d096c7935ec0ff312aea03054500
+
+
