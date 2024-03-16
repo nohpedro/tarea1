@@ -1,10 +1,27 @@
-Laboratorio - Programación por Partes
-Nombres: Cristhian Butron
-Pedro Santos
-Ariana Kremsberger
-Enunciado: Crear una aplicacion de lista de tareas que permita agregar nuevas tareas, tareas en curso y tareas completadas
-Generando reportes por estados y eliminarlas de la lista
-Planificacion: Las herramientas que se usaran seran html y javascript
-Diseño: La creacion de una lista facil y entendible donde tengamos la tarea, el horario y como es el estado de la tarea
-Ramas: Utilizaremos 3 ramas pedrojr , arijr y crisjr
-Funciones: Las funciones que utilizaremos seran: agregar, modificar, eliminar, reportes, manejar estados.
+REPOSITORIO
+
+READ.ME 
+1. Título e Imagen de portada: MultiTask.
+2. Descripción del Proyecto: Se quiere realizar una aplicación para organizar tareas y actividades, mediante el desarrollo web.
+3. Estado del Proyecto: Proyecto en etapa de Pruebas.
+4. Caracteríasticas de la aplicación:
+    1. Mostrar el Estado de las Tareas.
+    2. Registro de Tarea con atributo fecha y hora.
+    3. Filtro de estado de tareas.
+    4. Mostrar historial de tareas eliminadas
+    5. Eliminar tareas con plazo vencido.
+    6. Registro correcto de la hora
+    7. Modo Oscuro
+    8. Descargar Reporte de tareas
+    9. Generar Reportes de tareas eliminadas
+    10. CRUD COMPLETO Tareas
+5. Tecnoloías utilizadas:
+JavaScript, HTML, CSS, Bootstrap.
+6. Personas desarrolladoras del proyecto
+
+            -Andres Ignacio Hinojosa Garnica
+            -Jose Sebastian Escobar Salinas  
+            -Ariana Kate Kremsberger Cueto
+            -Cristhian Dylan Butron Perez
+            -Pedro Adrian Santos Orellana
+
