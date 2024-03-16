@@ -162,6 +162,7 @@ function eliminarTarea() {
     console.log(`No se encontró ninguna tarea con el código ${codigo}.`);
   }
   cambiarSeccion("crearTarea");
+  alert("Tarea eliminada exitosamente");
 }
 
 function guardarEdicion() {

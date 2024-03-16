@@ -16,4 +16,6 @@ function crearNuevaTarea() {
 
   mostrarTareas();
   cambiarSeccion("crearTarea");
+
+  alert("Tarea guardada exitosamente");
 }
